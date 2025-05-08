@@ -1,0 +1,78 @@
+#header {
+    position: running(header);
+    text-align: left;
+    margin-left: -30pt;
+    margin-right: 0pt;
+}
+
+#footer {
+    position: running(footer);
+    margin-left: -30pt;
+}
+
+@page {
+
+    margin-top: 50pt;
+    margin-bottom: 50pt;
+    margin-left: -30pt;
+    margin-right: 0pt;
+
+    @top-left {
+        content: element(header);
+    }
+
+    @bottom-left {
+        content: element(footer);
+    }
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+table,
+tr,
+td {
+    vertical-align: top;
+    border-collapse: collapse;
+}
+
+p {
+    margin: 0;
+}
+
+.ie-container table,
+.mso-container table {
+    table-layout: fixed;
+}
+
+* {
+    line-height: inherit;
+}
+
+a[x-apple-data-detectors='true'] {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+table,
+td {
+    color: #000000;
+}
+
+.page-break {
+    page-break-after: always;
+}
+
+.next-page {
+    page-break-before: always
+}
+
+#page-number::after {
+    counter-increment: page;
+    counter-reset: page 1;
+    content: counter(page);
+    margin-right: -50pt;
+}

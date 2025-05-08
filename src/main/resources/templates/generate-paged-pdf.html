@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{css/pdf.css}" />
+</head>
+
+<body>
+
+    <!-- @bottom-right {
+        color: grey;
+        content: "Page " counter(page) " of " counter(pages);
+    } -->
+
+    <div th:insert="~{base :: header}"></div>
+    <div th:insert="~{base :: footer}"></div>
+
+    <!-- Replace content here -->
+    <!-- <div th:each="agenda,iterStat : ${agendas}">
+
+    </div> -->
+    <div class="next-page"></div>
+
+
+</body>
+
+</html>

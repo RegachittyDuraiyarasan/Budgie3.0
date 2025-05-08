@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEMA's Introduction Form</title>
+</head>
+
+<body>
+<div class="container">
+    <p class="form-header">Welcome Aboard</p>
+    <p>Dear Newbie at HEMA's, we are delighted that you are onboard our inspiring HEMA's bandwagon...</p>
+
+    <div class="form-section">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Name</label>
+                <div class="input-group">
+                    <input type="text" th:value="${firstName}" />
+                    <span>have joined as</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Designation</label>
+                <div class="input-group">
+                    <input type="text" th:value="${designation}" />
+                    <span>at</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Department</label>
+                <div class="input-group">
+                    <input type="text" th:value="${department}" />
+                    <span>in</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Joining Date</label>
+                <div class="input-group">
+                    <input type="date" th:value="${doj}" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-header">Education</div>
+        <div class="form-row" th:each="edu : ${educationDetails}">
+            <span>I did my</span>
+            <div class="form-group">
+                <label>Degree</label>
+                <input type="text" th:value="${edu.qualification}" />
+            </div>
+            <span>at</span>
+            <div class="form-group">
+                <label>College/University</label>
+                <input type="text" th:value="${edu.institute}" />
+            </div>
+            <span>in</span>
+            <div class="form-group">
+                <label>Year</label>
+                <input type="date" th:value="${edu.formattedEndOn}" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-header">My Achievements in Education</div>
+        <div class="editor-container">
+            <input type="text" th:value="${achievementExperience}" />
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-header">Work Experience</div>
+        <div class="form-work-row" th:if="${not #lists.isEmpty(experienceDetails)}">
+            <span>I started my professional career in</span>
+            <div class="form-work-group">
+                <label>Work</label>
+                <input type="text" th:value="${experienceDetails[0].company}" class="w-100" />
+            </div>
+            <span>as</span>
+            <div class="form-work-group">
+                <label>Designation</label>
+                <input type="text" th:value="${experienceDetails[0].jobTitle}" class="w-100" />
+            </div>
+            <span>for about</span>
+            <div class="form-work-group">
+                <label>Year</label>
+                <input type="date" th:value="${experienceDetails[0].formattedYear}" class="w-100" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-header">Work Achievements</div>
+        <div class="editor-container">
+            <input type="text" th:value="${achievementEducation}" />
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-header">Some Interesting Facts About Me</div>
+        <div class="grid-container">
+            <div class="form-group">
+                <label>Favorite Hobbies</label>
+                <input type="text" th:value="${favHobbies}" />
+            </div>
+            <div class="form-group">
+                <label>Career Inspirations</label>
+                <input type="text" th:value="${careerInspiration}" />
+            </div>
+            <div class="form-group">
+                <label>Languages Known</label>
+                <input type="text" th:value="${languageKnown}" />
+            </div>
+            <div class="form-group">
+                <label>My Motto</label>
+                <input type="text" th:value="${myMotto}" />
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

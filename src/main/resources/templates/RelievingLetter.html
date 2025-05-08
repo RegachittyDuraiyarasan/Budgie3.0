@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relieving Letter</title>
+    <style>
+       .card-body{
+        font-size: 15px !important;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="logo_image">
+                            <img th:src="@{images/hepl-logo.png}" alt="logo" height="10%" style="float:right;" />
+
+                        </div><br /><br />
+
+                        <p><strong th:text="${date}">June 23, 2024</strong></p>
+                        <p class="calibri calibri-13">
+                            <strong th:text="${empname}"></strong> <br />
+                            <strong th:text="${empId}"></strong> <br />
+                            <strong th:text="${designation}"></strong> <br />
+                        </p>
+
+                        <div style="text-align: center; font-size: 18x; font-weight: bold;">
+                        <H3> <u><span>EXPERIENCE & RELIEVING LETTER</span></u></H3>
+                           
+                        </div>
+
+                        <h4>Dear <span th:text="${empname}"></span>,</h4>
+
+                        <p>This is with reference to your resignation from services dated <b><span
+                                    th:text="${dol}"></span></b>.</p>
+
+                        <p>
+                            Your resignation is accepted. You have been part of our organization since
+                            <b><span th:text="${doj}"></span></b> and relieved from the services of the company at the
+                            closing hours of <b><span th:text="${dol}"></span></b>.
+                        </p>
+
+                        <p>
+                            At the time of relieving, your designation was
+                            <b><span th:text="${designation}"></span></b>.
+                        </p>
+
+                        <p>
+                            It may be noted that all confidentiality agreements, including Non-disclosure agreements,
+                            signed by you
+                            remain in force and that no information obtained in the course of your work shall be
+                            disclosed.
+                        </p>
+
+                        <p>We wish you success in all your future endeavors.</p>
+                        <p>We wish you all the very best!</p>
+
+                        <br />
+                        <p>Yours Sincerely,</p>
+
+                        <h4>FOR HEMA’S ENTERPRISES PRIVATE LIMITED</h4>
+                        <img th:src="@{images/prasanna_sign.png}" />
+                        <h4>PRASANNA R</h4>
+                        <h4>HEAD - HUMAN RESOURCES</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="text-align:center; margin-top: 70px;">
+            <b>HEMA’S ENTERPRISES PRIVATE LIMITED</b>
+        </p>
+        <p style="text-align:center; margin-top: -20px;">
+            <b>Reg Office: # S3, SIDCO Industrial Estate, Semmandalam, Cuddalore - 607 001 TAMIL NADU INDIA</b>
+        </p>
+    </footer>
+</body>
+
+</html>

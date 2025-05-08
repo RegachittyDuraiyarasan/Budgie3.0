@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring boot email template with Thymeleaf</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+
+</head>
+<body>
+<p><b th:text="'Dear ' + ${firstname} + ', Congratulations!'" ></b></p>
+<p>Welcome to the team! We are excited to have you at HEPL<br> - Group Company of CavinKare.</p>
+
+<p>We believe that you will grow to be a valuable asset to our company and we are looking forward to the positive impact you're about to create.</p>
+
+<p>On behalf of all the members and the management, we would like to extend our warmest welcome and good wishes!</p>
+<p>Please login to <a href="http://216.48.191.170/budgie_qa_frontend/#/login">http://216.48.191.170/budgie_qa_frontend/#/login</a> <br> to  access BUDGIE portal and login using credentials mentioned below. </p>
+
+<p><b th:text="'Username :' + ${empId} " ></b></p>
+<p><b th:text="'Password : ' + ${password} " ></b></p>
+
+
+<p><b>Thank you</b></p>
+<p>HR OPS Team - HEPL</p>
+
+
+</body>
+</html>

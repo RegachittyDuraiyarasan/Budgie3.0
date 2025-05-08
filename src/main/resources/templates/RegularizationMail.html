@@ -1,0 +1,72 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Regularization Notification</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse; /* Merge adjacent borders */
+            border: 1px solid black;
+        }
+
+        th {
+            padding: 10px;
+            width: 50px;
+            border: 1px solid black;
+        }
+
+        td {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Dear <span th:text="${managerName}"></span>,</h4>
+    <p>
+        <span th:text="${userName + ' [' + employeeId + ']'}"></span>,
+        has applied for attendance regularization for the following dates
+    </p>
+    
+    <p>Please login on to <a href="http://216.48.191.170/budgie_react_frontend/#/login">BUDGIE</a> and review the attendance regularization
+        request. </p>
+    <table>
+        <tr>
+            <th rowspan="2"> Attendance Date </th>
+            <th colspan="2"> Actual </th>
+            <th colspan="2">Employee Proposed</th>
+            <th rowspan="2">Reason</th>
+        </tr>
+        <tr>
+
+            <th> FIT </th> <!-- Sub-header for Actual column -->
+            <th> LOT </th>
+            <th> FIT </th>
+            <th> LOT </th>
+
+        </tr>
+        <tr th:each="record : ${appliedRegularizations}">
+            <td> <span th:text="${record.attendanceDate}"> </span> </td>
+            <td> <span th:text="${record.attendanceDate}"> </span> <br> <span th:text="${record.startTime} + ' AM'"> </span> </td>
+            <td> <span th:text="${record.attendanceDate}"> </span> <br> <span th:text="${record.endTime} + ' PM'"> </span> </td>
+            <td> <span th:text="${record.attendanceDate}"> </span> <br> <span th:text="${record.actualInTime} + ' AM'"> </span> </td>
+            <td> <span th:text="${record.attendanceDate}"> </span> <br> <span th:text="${record.actualOutTime} + ' PM'"> </span> </td>
+            <td> <span th:text="${record.reason}"> </span> </td>
+        </tr>        
+        <tr>
+            <th style="text-align: left" > Remarks </th>
+            <td style="text-align: left" colspan="5">  <span th:text="${remarks}"> </span></td>
+        </tr>
+        
+    </table>
+
+    <h4>Note:This is an auto-generated mail. Please do not reply.</h4>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+spring:
+  config:
+    activate:
+      on-profile: uat
+  data:
+   mongodb:
+      uri: mongodb://localhost:27017/budgie_3
+      database: budgie_3
+      auto-index-creation: true
+      key:
+        vault:
+          database: "encryption"
+          collection: "__keyVault"
+          name: "dataEncKey"
+      kmsprovider: "local"
+      encryption:
+        masterKeyPath: "master-key.txt"
+  output:
+    ansi:
+      enabled: always
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+      resolve-lazily: true
+  mail: 
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 321c19d26642e2
+    password: 6647c45f0f0b41
+    properties: 
+      mail:
+        smtp: 
+          auth: true
+          starttls:
+            enable: true
+
+springdoc:
+  api-docs:
+    path: /docs
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /ui
+
+server:
+  port: 9012
+  servlet:
+    context-path: /budgie/v3/api
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+
+rsa:
+  public-key: classpath:certs/public.pem
+  private-key: classpath:certs/private.pem
+
+storage:
+  location: documents
+  recycle: bin
+  organization: organization
+  profile: profile
+  otherDocuments: otherDocuments
+  passport-photo: passport
+  payslips: payslips
+  idCard: idCard
+  idCardGenerator: idCardGenerator
+  resume: resume
+  relieving-letter: relievingLetter
+  vaccination: vaccination
+  bank-passbook: bankPassbook
+  bloodGroup-proof: bloodGroupProof
+  dateOfBirth-proof: dateOfBirthProof
+  pan: pan
+  aadhaarCard: aadhaarCard
+  signature: signature
+  experience: experience
+  education: education
+  holiday : holiday
+  idCardPhotoHr: idCardPhotoHr
+  helpdesk: helpdesk
+  iiyCertificate: iiyCertificate
+  profilePhoto: profilePhoto
+  bannerImage: bannerImage
+  employeeDocument: employeeDocument
+  reimbursement: reimbursement
+  separation: separation
+  leaveApply: leaveApply
+  idCardPhoto: idCardPhoto
+  companyPolicy: companyPolicy
+  
+com:
+  custom:
+    reset-link: https://api.cavinkare.in/budgie/api/swagger-ui/index.html
+    isSignUp: true
+    swagger-path: /budgie/v3/api
+    swagger-live-path: /budgie/v3/api
+    role-inactive: 65eaa70bd107bf5456f2d88e,65ebefe4cda8d30b560e923f
